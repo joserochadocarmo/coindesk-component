@@ -2,12 +2,15 @@
 <link rel="import" href="../iron-ajax/iron-ajax.html">
 <dom-module id="coindesk-component">
   <template>
-    <iron-ajax auto url="https://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
+    <iron-ajax auto url="http://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
       debounce-duration="300"></iron-ajax>
   </template>
 
   <script>
   /**
+  List of supported currencies
+  http://api.coindesk.com/v1/bpi/supported-currencies.json
+
   Exemple use
   <coindesk-component currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
     code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></coindesk-component>
