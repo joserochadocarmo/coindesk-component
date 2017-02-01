@@ -1,0 +1,82 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<dom-module id="bitcoin-price">
+  <template>
+    <iron-ajax auto url="http://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
+      debounce-duration="300"></iron-ajax>
+  </template>
+
+  <script>
+  /**
+  Exemple use
+  <bitcoin-price currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
+    code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></bitcoin-price>
+
+  Code:{{code}}
+  Description:{{description}}
+  Rate:{{rate}}
+  Rate Float:{{rate_float}}
+  Updated:{{updated}}
+  UpdatedISO:{{updatediso}}
+  Updateduk:{{updateduk}}
+  Disclaimer:{{disclaimer}}
+  **/
+  Polymer({
+
+    is: 'bitcoin-price',
+
+    properties: {
+      updated: {
+        type: String,
+        notify: true
+      },
+      updatediso: {
+        type: String,
+        notify: true
+      },
+      updateduk: {
+        type: String,
+        notify: true
+      },
+      disclaimer: {
+        type: String,
+        notify: true
+      },
+      code: {
+        type: String,
+        notify: true
+      },
+      rate: {
+        type: String,
+        notify: true
+      },
+      description: {
+        type: String,
+        notify: true
+      },
+      rate_float: {
+        type: String,
+        notify: true
+      },
+      ajaxResponse: {
+        type: Object
+      }
+    },
+    observers: [
+      'ajaxResponseChanged(ajaxResponse)'
+    ],
+    ajaxResponseChanged: function(ajaxResponse){
+      const { bpi,disclaimer,time } = ajaxResponse;
+      const cur = bpi[this.currency]
+      this.code = cur.code;      
+      this.description = cur.description;
+      this.rate = cur.rate;
+      this.rate_float = cur.rate_float;
+      this.disclaimer = disclaimer;
+      this.updated = time.updated;
+      this.updatediso = time.updatedISO;
+      this.updateduk = time.updateduk;
+    }
+  });
+</script>
+</dom-module>

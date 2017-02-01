@@ -1,0 +1,7 @@
+{
+  "name": "coindesk-component",
+  "short_name": "coindesk-component",
+  "description": "Provides a simple Webcomponent to make its Bitcoin Price Index (BPI) available to others",
+  "start_url": "/",
+  "display": "standalone"
+}
