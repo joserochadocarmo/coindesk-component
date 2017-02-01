@@ -9,7 +9,7 @@ Example:
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>    
-    <link rel="import" href="bitcoin-price.html">
+    <link rel="import" href="coindesk-component.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -17,8 +17,8 @@ Example:
 -->
 ```html
 <template is="dom-bind">
-<bitcoin-price currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
-    code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></bitcoin-price>
+<coindesk-component currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
+    code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></coindesk-component>
 
 <br/> Code:{{code}}
 <br/> Description:{{description}}

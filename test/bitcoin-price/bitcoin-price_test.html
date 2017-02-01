@@ -9,7 +9,7 @@
     <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../../bitcoin-price.html">
+    <link rel="import" href="../../coindesk-component.html">
   </head>
   <body>
     <test-fixture id="basic">
@@ -22,7 +22,7 @@
       suite('bitcoin-price', function() {
         test('instantiating the element works', function() {
           var element = fixture('basic');
-          assert.equal(element.is, 'bitcoin-price');
+          assert.equal(element.is, 'coindesk-component');
         });
       });
     </script>

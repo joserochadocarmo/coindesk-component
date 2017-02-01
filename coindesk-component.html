@@ -1,6 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-ajax/iron-ajax.html">
-<dom-module id="bitcoin-price">
+<dom-module id="coindesk-component">
   <template>
     <iron-ajax auto url="https://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
       debounce-duration="300"></iron-ajax>
@@ -9,8 +9,8 @@
   <script>
   /**
   Exemple use
-  <bitcoin-price currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
-    code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></bitcoin-price>
+  <coindesk-component currency="BRL" updated="{{updated}}" updatediso="{{updatediso}}" updateduk="{{updateduk}}" disclaimer="{{disclaimer}}"
+    code="{{code}}" rate="{{rate}}" description="{{description}}" rate_float="{{rate_float}}"></coindesk-component>
 
   Code:{{code}}
   Description:{{description}}
@@ -23,7 +23,7 @@
   **/
   Polymer({
 
-    is: 'bitcoin-price',
+    is: 'coindesk-component',
 
     properties: {
       updated: {
