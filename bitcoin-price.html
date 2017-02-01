@@ -2,7 +2,7 @@
 <link rel="import" href="../iron-ajax/iron-ajax.html">
 <dom-module id="bitcoin-price">
   <template>
-    <iron-ajax auto url="http://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
+    <iron-ajax auto url="https://api.coindesk.com/v1/bpi/currentprice/{{currency}}.json" handle-as="json" last-response="{{ajaxResponse}}"
       debounce-duration="300"></iron-ajax>
   </template>
 
